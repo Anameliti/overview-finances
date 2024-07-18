@@ -1,0 +1,302 @@
+Delivered-To: carolina.meliti@gmail.com
+Received: by 2002:a05:6638:840b:b0:4c0:8b83:f61b with SMTP id iq11csp1011358jab;
+        Wed, 17 Jul 2024 12:18:28 -0700 (PDT)
+X-Received: by 2002:a05:6808:179e:b0:3d5:6504:6713 with SMTP id 5614622812f47-3dad1f884e3mr3037802b6e.43.1721243907869;
+        Wed, 17 Jul 2024 12:18:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1721243907; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xt2ltCV5omjiij1O5qSHho7nWXH/7w2bo3sqkCegg8RfYu6KbH6eCUC/RP3lSGtNMD
+         kWhHqMezUQMfrmr4Lam7EBRsbR/5oouHgN8P2s3VdLj+04zFmlexASir7RRkBoa5qHNW
+         grEq0GjCE/LJJvd12+jUqtv+zOyA2F6aiKWoEreTjhxBqr9vr2YC5JPfZWIdy1UnBFDM
+         NUwLKurioNHGrC2GJUrwgbvKIRSdjHPUkN6xZCfenHompuJairQGwRf94Zg6Ju+2FY9G
+         m9vdQxaVZvizqKT5ajWs94x1XdlHdGdoYnt/6Lz+sUCwBuq98sh8W/oZo6MZ1j2Vi+Ac
+         WmSQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:dkim-signature;
+        bh=+ms/8N3/L3MJ3N6aRsEznFnJ+H/F87bkXRvfBmP2+og=;
+        fh=hZE1xGc/gss69pOy3/vnQ7WpCDweDXyvvRLZYmdDUpM=;
+        b=TXElb31/TcnnjQu9NfqIM6dzGixeaJwIzY64NygwqhDCIDnHBuR0FXvTZ3FUZ1Mg11
+         itShwTMyKz5rE+PrU5x1hh4HuOVEFpXpFWKH0RBEVG8WO8MHGTE+oKSscwoPLWjTZO2M
+         k4u40kAyVp9Yi4QNzibv1cVtphc6SHLKwiqvqXVZiqp7qJYXsZYiUyMGu6UEBhUWZ8r7
+         HyhNJhWQfZ5I9TiWmlhArOcxI6Fq5fZtLsPEmdV6/HsBZ7xhUi3BQm5MMTW4s/B4KhCC
+         +n6yo4qeBJfcQT2oLcsX0r7RBOX2/NmfDbs+geNh+t8HBd8qxuOyS62W/LjfxLKVapsY
+         fwTA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=eTu4EUEN;
+       spf=pass (google.com: domain of customerautoenterprise@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=customerautoenterprise@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <customerautoenterprise@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 5614622812f47-3dad521aa87sor616778b6e.5.2024.07.17.12.18.27
+        for <carolina.meliti@gmail.com>
+        (Google Transport Security);
+        Wed, 17 Jul 2024 12:18:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of customerautoenterprise@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=eTu4EUEN;
+       spf=pass (google.com: domain of customerautoenterprise@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=customerautoenterprise@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1721243907; x=1721848707; dara=google.com;
+        h=to:from:subject:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=+ms/8N3/L3MJ3N6aRsEznFnJ+H/F87bkXRvfBmP2+og=;
+        b=eTu4EUENSN7YnQfVe9C8WyMeUxCwG7gZ0ac8Y6OV9RIk5VfDixhRnVB06+6zYeSHih
+         McXVYY9DQ5osdQab+bwoDmn/hFEySya/NSDFTPtDlilhJVeyUYKzlbk3AemNRb+NXf5/
+         8iJYeFVVOXGbPFR0jvQ1XIRilVERu8KpUkeb8hAmBZAVXgab67UVE0c+oxyVVRsOVuTC
+         dB33ZiC4QvlOHnww20yxkZ1Tevx+xFNGblYRNLDxi0++xr8ARE+e9DV9PrcgMMQ9pRtb
+         Wrxv9PWQD5t0LT/Q2s0AcHgCVmkPrVma3Q2YSsTStD3+GaGtZmDCfDM+ylhGNEb/ofLb
+         K6tw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1721243907; x=1721848707;
+        h=to:from:subject:date:message-id:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=+ms/8N3/L3MJ3N6aRsEznFnJ+H/F87bkXRvfBmP2+og=;
+        b=PPTpmXQtJnKX2QsB86m2oCNE/Aeq2EjzbKxC5TAAwEhxQgsJ3vKa1UL6L6K86ThIC9
+         /oGdtC7nZZ9mscSQXksNQ2/6OscTrucGTIHx4YuNxz3iXQdFVUP4tkqpu+Jr6g7G9qNy
+         g6yI2a8uRkwLjl0VhMvN7d80RmsAUMUmxOa2Vv7DdI9jDqLITEDzVKv+G//CZxj1bZcF
+         JFo0GNYR2KlT72X7NFKYM9KU9HLiHu+ETvz5J89Pdz71cgMSwRvG4gFHK14W/Qmc9OIm
+         dGPcIAj+rFy/kwCgXGVn9Hd2pSDMfA/WX5M8uGGRBQQ7tZ7IXKYL37BsEvBeDF/Rs20D
+         PoFA==
+X-Gm-Message-State: AOJu0Yz/ZfCEhdTjRkw5MhihGRqTdSH4gmY9mwgUZQy9hnUoe6lhz/IC
+	gMu1EVGGYhDAF9dNftuqZNGTNsB4f442oDtv7yH8XiaL1+1RqhgfqKLMOAqaOUc=
+X-Google-Smtp-Source: AGHT+IHFpAUsirtvIkzfrqGR/7oGcnKMMKqDUVbqy4+iwHwazLKj9nWg4PzLn+xd3sFMnLxngsPadA==
+X-Received: by 2002:a05:6358:2815:b0:1a6:7e01:e4f4 with SMTP id e5c5f4694b2df-1aca9f9db46mr31594255d.28.1721243907057;
+        Wed, 17 Jul 2024 12:18:27 -0700 (PDT)
+Return-Path: <customerautoenterprise@gmail.com>
+Received: from [192.168.15.65] ([179.117.58.228])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-78e34d2b21fsm5515830a12.47.2024.07.17.12.18.26
+        for <carolina.meliti@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 17 Jul 2024 12:18:26 -0700 (PDT)
+Message-ID: <66981902.050a0220.69bc6.5fa3@mx.google.com>
+Date: Wed, 17 Jul 2024 12:18:26 -0700 (PDT)
+Subject: =?utf-8?q?Relat=C3=B3rio_atualizado_de_metas?=
+From: customerautoenterprise@gmail.com
+To: carolina.meliti@gmail.com
+Content-Type: text/html
+
+
+<h1><p color="#272727">Olá, Líder!</p></h1>
+
+<div color="#272727">Esperamos que esteja bem, trouxe novidades aqui... </div>
+
+<div color="#272727">Saiba que você é nosso <b>grande progatonista</b> nessa nossa história.</div>
+<p color="#272727">Verifique as atualizações da meta mensal da sua equipe aqui:</p>
+
+<div color="#272727"><b>Faturamento por loja</b></div>
+<div><table class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Produto</th>
+      <th>Faturamento</th>
+    </tr>
+  </thead>
+  <tbody style= "text-align:center; color: #494949;background: #EBEBEB">
+    <tr>
+      <td>Notebook</td>
+      <td>R$ 48.991.770,00</td>
+    </tr>
+    <tr>
+      <td>PC</td>
+      <td>R$ 38.456.200,00</td>
+    </tr>
+    <tr>
+      <td>Monitor</td>
+      <td>R$ 11.907.600,00</td>
+    </tr>
+    <tr>
+      <td>Impressora</td>
+      <td>R$ 9.286.215,00</td>
+    </tr>
+    <tr>
+      <td>Tablet</td>
+      <td>R$ 9.016.716,00</td>
+    </tr>
+    <tr>
+      <td>Nobreak</td>
+      <td>R$ 8.669.062,00</td>
+    </tr>
+    <tr>
+      <td>Teclado</td>
+      <td>R$ 1.193.580,00</td>
+    </tr>
+    <tr>
+      <td>Webcam</td>
+      <td>R$ 984.300,00</td>
+    </tr>
+    <tr>
+      <td>Mouse</td>
+      <td>R$ 725.872,00</td>
+    </tr>
+    <tr>
+      <td>Caixa de som</td>
+      <td>R$ 516.265,00</td>
+    </tr>
+  </tbody>
+</table></div>
+<p> </p>
+<div color="#272727"><b>Quantidade vendida por produto</b></div>
+<div><table class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Produto</th>
+      <th>Faturamento</th>
+    </tr>
+  </thead>
+  <tbody style= "text-align:center; color: #494949;background: #EBEBEB">
+    <tr>
+      <td>Notebook</td>
+      <td>R$ 48.991.770,00</td>
+    </tr>
+    <tr>
+      <td>PC</td>
+      <td>R$ 38.456.200,00</td>
+    </tr>
+    <tr>
+      <td>Monitor</td>
+      <td>R$ 11.907.600,00</td>
+    </tr>
+    <tr>
+      <td>Impressora</td>
+      <td>R$ 9.286.215,00</td>
+    </tr>
+    <tr>
+      <td>Tablet</td>
+      <td>R$ 9.016.716,00</td>
+    </tr>
+    <tr>
+      <td>Nobreak</td>
+      <td>R$ 8.669.062,00</td>
+    </tr>
+    <tr>
+      <td>Teclado</td>
+      <td>R$ 1.193.580,00</td>
+    </tr>
+    <tr>
+      <td>Webcam</td>
+      <td>R$ 984.300,00</td>
+    </tr>
+    <tr>
+      <td>Mouse</td>
+      <td>R$ 725.872,00</td>
+    </tr>
+    <tr>
+      <td>Caixa de som</td>
+      <td>R$ 516.265,00</td>
+    </tr>
+  </tbody>
+</table></div>
+<p> </p>
+<div color="#272727"><b>Ticket médio por loja:</b></div>
+<div><table class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Produto</th>
+      <th>Faturamento</th>
+    </tr>
+  </thead>
+  <tbody style= "text-align:center; color: #494949;background: #EBEBEB">
+    <tr>
+      <td>Notebook</td>
+      <td>R$ 48.991.770,00</td>
+    </tr>
+    <tr>
+      <td>PC</td>
+      <td>R$ 38.456.200,00</td>
+    </tr>
+    <tr>
+      <td>Monitor</td>
+      <td>R$ 11.907.600,00</td>
+    </tr>
+    <tr>
+      <td>Impressora</td>
+      <td>R$ 9.286.215,00</td>
+    </tr>
+    <tr>
+      <td>Tablet</td>
+      <td>R$ 9.016.716,00</td>
+    </tr>
+    <tr>
+      <td>Nobreak</td>
+      <td>R$ 8.669.062,00</td>
+    </tr>
+    <tr>
+      <td>Teclado</td>
+      <td>R$ 1.193.580,00</td>
+    </tr>
+    <tr>
+      <td>Webcam</td>
+      <td>R$ 984.300,00</td>
+    </tr>
+    <tr>
+      <td>Mouse</td>
+      <td>R$ 725.872,00</td>
+    </tr>
+    <tr>
+      <td>Caixa de som</td>
+      <td>R$ 516.265,00</td>
+    </tr>
+  </tbody>
+</table></div>
+<p> </p>
+<div color="#272727"><b>Estoque de produtos disponíveis:</b></div>
+<div><table class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Produto</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+  <tbody style= "text-align:center; color: #494949;background: #EBEBEB">
+    <tr>
+      <td>Impressora</td>
+      <td>13.285</td>
+    </tr>
+    <tr>
+      <td>Notebook</td>
+      <td>12.930</td>
+    </tr>
+    <tr>
+      <td>Monitor</td>
+      <td>9.923</td>
+    </tr>
+    <tr>
+      <td>Nobreak</td>
+      <td>6.778</td>
+    </tr>
+    <tr>
+      <td>Tablet</td>
+      <td>6.684</td>
+    </tr>
+    <tr>
+      <td>Teclado</td>
+      <td>6.631</td>
+    </tr>
+    <tr>
+      <td>Webcam</td>
+      <td>6.562</td>
+    </tr>
+    <tr>
+      <td>Caixa de som</td>
+      <td>6.535</td>
+    </tr>
+    <tr>
+      <td>PC</td>
+      <td>6.518</td>
+    </tr>
+    <tr>
+      <td>Mouse</td>
+      <td>6.481</td>
+    </tr>
+  </tbody>
+</table></div>
+<p> </p>
+
+<div color="#272727">Conte sempre conosco!</div>
+<div color="#272727"><b>Atenciosamente,</b></div>
+<div color="#272727">Equipe planejamento.</div>
+
